@@ -10,6 +10,7 @@
 import Todos from "./components/Todos.vue";
 import Header from "./components/layout/Header.vue";
 import AddTodo from "./components/AddTodo.vue";
+//import axios from "axios"
 
 export default {
   name: "App",
@@ -21,19 +22,31 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1, title: "todo1", completed: true },
-        { id: 2, title: "todo2", completed: true },
-        { id: 3, title: "todo3", completed: false }
+         { id: 1, title: "Vue-t tanulni", completed: true },
+         { id: 2, title: "Gitet tanulni", completed: true },
+         { id: 3, title: "kurento átnézése", completed: false }
       ]
     };
   },
   methods: {
     deleteTodo(id) {
+      //axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      //.then(() => this.todos = this.todos.filter(x => x.id != id))
+      //.catch(err => console.log(err))
       this.todos = this.todos.filter(x => x.id != id);
     },
     addTodo(newTodo){
+      //const {title, completed} = newTodo
+      //axios.post('https://jsonplaceholder.typicode.com/todos', {title,completed})
+      //.then(res => this.todos = [...this.todos, res.data])
+      //.catch(err => console.log(err))
       this.todos = [...this.todos, newTodo]
     }
+  },
+  created(){
+    //axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    //.then(res=> this.todos = res.data)
+    //.catch(err => console.log(err))
   }
 };
 </script>
