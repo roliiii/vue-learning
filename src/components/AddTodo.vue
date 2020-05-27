@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Add todo:</p>
     <form @submit="addTodo">
       <input type="text" v-model="title" name="title" placeholder="Todo name..." />
       <input type="submit" value="Submit" class="btn" />
@@ -37,6 +38,7 @@ export default {
 <style scoped>
 form {
   display: flex;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
